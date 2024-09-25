@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\olive\\OneDrive\\Skrivbord\\petAPIprogram\\petAPIprogram\\wwwroot\\Images\\mediumDog1.jpeg",
+      "PackagePath": "staticwebassets\\Images\\mediumDog1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\olive\\OneDrive\\Skrivbord\\petAPIprogram\\petAPIprogram\\wwwroot\\Images\\orangeCat1.jpg",
+      "PackagePath": "staticwebassets\\Images\\orangeCat1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\olive\\OneDrive\\Skrivbord\\petAPIprogram\\petAPIprogram\\wwwroot\\Images\\orangeCat2.jpg",
+      "PackagePath": "staticwebassets\\Images\\orangeCat2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\olive\\OneDrive\\Skrivbord\\petAPIprogram\\petAPIprogram\\wwwroot\\Images\\smallDog1.jpg",
+      "PackagePath": "staticwebassets\\Images\\smallDog1.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.petAPIprogram.props",
+      "PackagePath": "build\\petAPIprogram.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.petAPIprogram.props",
+      "PackagePath": "buildMultiTargeting\\petAPIprogram.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.petAPIprogram.props",
+      "PackagePath": "buildTransitive\\petAPIprogram.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.petAPIprogram.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
