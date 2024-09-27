@@ -1,15 +1,14 @@
 ﻿using PetApiProgram.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PetApiProgram.Services
 {
     public class PetService
     {
-      
         private readonly List<string> animalTypes = new List<string> { "Cat", "Dog", "Bird" };
 
-     
         private readonly Dictionary<string, List<string>> petNames = new Dictionary<string, List<string>>
         {
             { "Cat", new List<string> { "Whiskers", "Fluffy", "Bella", "Luna" } },
@@ -19,16 +18,16 @@ namespace PetApiProgram.Services
 
         private readonly Dictionary<string, List<string>> petImages = new Dictionary<string, List<string>>
         {
-            { "Cat", new List<string> { "https://localhost:7172/Images/orangeCat1.jpg", "https://localhost:7172/Images/orangeCat2.jpg" } },
+            { "Cat", new List<string> { "https://localhost:7172/Images/orangeCat1.jpg", "https://localhost:7172/Images/orangeCat2.jpg", "https://localhost:7172/Images/beigeCat1.jpg" } },
             { "Dog", new List<string> { "https://localhost:7172/Images/smallDog1.jpg", "https://localhost:7172/Images/mediumDog1.jpeg" } },
             { "Bird", new List<string> { "https://localhost:7172/Images/birdParrot1.jpg", "https://localhost:7172/Images/birdParrot2.jpg" } }
         };
 
         private readonly Dictionary<string, List<int>> petAgeRanges = new Dictionary<string, List<int>>
         {
-            { "Cat", new List<int> { 1, 20 } }, 
+            { "Cat", new List<int> { 1, 20 } },
             { "Dog", new List<int> { 1, 15 } },
-            { "Bird", new List<int> { 1, 10 } } 
+            { "Bird", new List<int> { 1, 10 } }
         };
 
         private readonly List<string> owners = new List<string> { "Alice", "Bob", "Charlie", "Dave", "Eva" };
@@ -36,18 +35,26 @@ namespace PetApiProgram.Services
 
         private readonly Random random = new Random();
 
-       
-
-        public Pet GetRandomPet()
+        public Pet GetRandomPet(Dictionary<string, List<string>> availableImages, out string animalType)
         {
-            string animalType = animalTypes[random.Next(animalTypes.Count)];
-            return GenerateSpecificPet(animalType);
+            animalType = animalTypes[random.Next(animalTypes.Count)];
+            return GenerateSpecificPet(animalType, availableImages);
         }
 
-        private Pet GenerateSpecificPet(string animalType)
+        private Pet GenerateSpecificPet(string animalType, Dictionary<string, List<string>> availableImages)
         {
             var name = petNames[animalType][random.Next(petNames[animalType].Count)];
-            var imageUrl = petImages[animalType][random.Next(petImages[animalType].Count)];
+
+            var imageList = availableImages[animalType];
+            if (imageList.Count == 0)
+            {
+                throw new InvalidOperationException($"No more images available for {animalType}");
+            }
+
+            var imageIndex = random.Next(imageList.Count);
+            var imageUrl = imageList[imageIndex];
+            imageList.RemoveAt(imageIndex);
+
             var ageRange = petAgeRanges[animalType];
             var age = random.Next(ageRange[0], ageRange[1] + 1);
 
@@ -58,17 +65,42 @@ namespace PetApiProgram.Services
                 ImageUrl = imageUrl,
                 Age = age,
                 Gender = genders[random.Next(genders.Count)],
-                Owner = owners[random.Next(owners.Count)]
+                Owner = owners[random.Next(owners.Count)],
+                AnimalType = animalType 
             };
         }
 
-        public List<Pet> GenerateRandomPets(int number)
+        public List<Pet> GenerateRandomPets(int number, out Dictionary<string, int> animalTypeCounts)
         {
             var pets = new List<Pet>();
+            animalTypeCounts = new Dictionary<string, int>();
+
+            var availableImages = new Dictionary<string, List<string>>();
+            foreach (var animalType in petImages.Keys)
+            {
+                availableImages[animalType] = new List<string>(petImages[animalType]);
+            }
+
             for (int i = 0; i < number; i++)
             {
-                pets.Add(GetRandomPet());
+                try
+                {
+                    var pet = GetRandomPet(availableImages, out string animalType);
+
+                    if (!animalTypeCounts.ContainsKey(animalType))
+                    {
+                        animalTypeCounts[animalType] = 0;
+                    }
+
+                    animalTypeCounts[animalType]++;
+                    pets.Add(pet);
+                }
+                catch (InvalidOperationException ex)
+                {
+                    Console.WriteLine("No more available images found for an animal type.");
+                }
             }
+
             return pets;
         }
     }
