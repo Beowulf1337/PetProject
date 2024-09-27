@@ -6,30 +6,59 @@ namespace PetApiProgram.Services
 {
     public class PetService
     {
-        private readonly List<string> petNames = new List<string> { "Buddy", "Whiskers", "Fluffy", "Bella", "Max", "Luna", "Charlie", "Milo" };
-        private readonly List<string> petImages = new List<string>
+      
+        private readonly List<string> animalTypes = new List<string> { "Cat", "Dog", "Bird" };
+
+     
+        private readonly Dictionary<string, List<string>> petNames = new Dictionary<string, List<string>>
         {
-            "https://localhost:7172/Images/orangeCat1.jpg\r\n", // Replace with your actual image URLs
-            "https://localhost:7172/Images/orangeCat2.jpg\r\n",
-            "https://localhost:7172/Images/smallDog1.jpg\r\n",
-            "https://localhost:7172/Images/mediumDog1.jpeg\r\n"
+            { "Cat", new List<string> { "Whiskers", "Fluffy", "Bella", "Luna" } },
+            { "Dog", new List<string> { "Buddy", "Max", "Charlie", "Milo" } },
+            { "Bird", new List<string> { "Tweety", "Sky", "Sunny", "Rio" } }
         };
+
+        private readonly Dictionary<string, List<string>> petImages = new Dictionary<string, List<string>>
+        {
+            { "Cat", new List<string> { "https://localhost:7172/Images/orangeCat1.jpg", "https://localhost:7172/Images/orangeCat2.jpg" } },
+            { "Dog", new List<string> { "https://localhost:7172/Images/smallDog1.jpg", "https://localhost:7172/Images/mediumDog1.jpeg" } },
+            { "Bird", new List<string> { "https://localhost:7172/Images/birdParrot1.jpg", "https://localhost:7172/Images/birdParrot2.jpg" } }
+        };
+
+        private readonly Dictionary<string, List<int>> petAgeRanges = new Dictionary<string, List<int>>
+        {
+            { "Cat", new List<int> { 1, 20 } }, 
+            { "Dog", new List<int> { 1, 15 } },
+            { "Bird", new List<int> { 1, 10 } } 
+        };
+
         private readonly List<string> owners = new List<string> { "Alice", "Bob", "Charlie", "Dave", "Eva" };
         private readonly List<string> genders = new List<string> { "Male", "Female" };
 
-        // Single instance of Random for consistent random generation
-        private readonly Random _random = new Random();
+        private readonly Random random = new Random();
+
+       
 
         public Pet GetRandomPet()
         {
+            string animalType = animalTypes[random.Next(animalTypes.Count)];
+            return GenerateSpecificPet(animalType);
+        }
+
+        private Pet GenerateSpecificPet(string animalType)
+        {
+            var name = petNames[animalType][random.Next(petNames[animalType].Count)];
+            var imageUrl = petImages[animalType][random.Next(petImages[animalType].Count)];
+            var ageRange = petAgeRanges[animalType];
+            var age = random.Next(ageRange[0], ageRange[1] + 1);
+
             return new Pet
             {
                 Id = Guid.NewGuid().ToString(),
-                Name = petNames[_random.Next(petNames.Count)],
-                ImageUrl = petImages[_random.Next(petImages.Count)],
-                Age = _random.Next(1, 11), // Random age between 1 and 10
-                Gender = genders[_random.Next(genders.Count)],
-                Owner = owners[_random.Next(owners.Count)]
+                Name = name,
+                ImageUrl = imageUrl,
+                Age = age,
+                Gender = genders[random.Next(genders.Count)],
+                Owner = owners[random.Next(owners.Count)]
             };
         }
 
