@@ -13,10 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Images\mediumDog1.jpeg" />
-    <None Include="wwwroot\Images\orangeCat1.jpg" />
-    <None Include="wwwroot\Images\orangeCat2.jpg" />
-    <None Include="wwwroot\Images\smallDog1.jpg" />
+    <None Include="wwwroot\Images\DogImages\mediumDog1.jpg" />
+    <None Include="wwwroot\Images\CatImages\orangeCat1.jpg" />
   </ItemGroup>
 
 </Project>
