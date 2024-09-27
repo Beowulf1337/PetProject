@@ -12,24 +12,53 @@ namespace PetApiProgram.Services
         private readonly Dictionary<string, Dictionary<string, List<string>>> petNames = new Dictionary<string, Dictionary<string, List<string>>>
         {
             { "Cat", new Dictionary<string, List<string>> {
-                { "Male", new List<string> { "Whiskers", "Fluffy", "Oliver", "Simba" } },
-                { "Female", new List<string> { "Bella", "Luna", "Sophie", "Molly" } }
+                { "Male", new List<string> { "Charlie", "Felix", "Finley", "Buddy", "Ralph", "Oscar", "Milo", "George", 
+                                             "Tigger", "Alfie", "Jasper", "Max", "Tiger", "Simba", "Bob", "Casper", "Fred", 
+                                             "Freddie", "Tommy", "Gizmo", "Harry", "Oliver", "Joey", "Drake", "Bello" } },
+                { "Female", new List<string> {"Poppy", "Bella", "Misty", "Molly", "Daisy", "Tilly", "Luna", "Lily", "Lilly", 
+                                              "Willow", "Coco", "Betty", "Missy", "Sophie", "Belle", "Cleo", "Izzy", "Hana", "Mika" } }
             }},
             { "Dog", new Dictionary<string, List<string>> {
-                { "Male", new List<string> { "Buddy", "Max", "Charlie", "Rocky" } },
-                { "Female", new List<string> { "Daisy", "Lucy", "Lola", "Sadie" } }
+                { "Male", new List<string> { "Charlie", "Max", "Milo", "Cooper", "Rocky", "Buddy", "Bear", "Teddy", "Harley", "Duke", 
+                                             "Zeus", "Blue", "Jack", "Loki", "Leo", "Oliver", "Tucker", "Koda", "Toby", "Bentley", 
+                                             "Jax", "Kobe", "Piper", "Ace", "Finn", "Ollie", "Louie", "Scout", "Apollo", "Winston"} },
+                { "Female", new List<string> {"Luna", "Bella", "Daisy", "Lucy", "Bailey", "Coco", "Lola", "Nala", "Sadie", "Stella", 
+                                              "Penny", "Molly", "Maggie", "Rosie", "Zoey", "Ruby", "Lily", "Nova", "Ellie", "Chloe", 
+                                              "Pepper", "Mia", "Riley", "Roxy", "Willow", "Millie", "Sophie", "Oreo", "Gracie", "Hazel"} }
             }},
             { "Bird", new Dictionary<string, List<string>> {
-                { "Male", new List<string> { "Tweety", "Sky", "Rio", "Jack" } },
-                { "Female", new List<string> { "Sunny", "Mimi", "Chirpy", "Kiwi" } }
+                { "Male", new List<string> { "Barry", "Benny", "Bertram", "Clive", "Clyde", "Duke", "Dusty", "Floyd", "Fred", "Freddy", 
+                                             "Harley", "Hawk", "Jasper", "Jay", "Jay Bird", "Jeffrey", "Jerry", "Joey", "Jonah", "Judah", 
+                                             "Kevin", "Kody", "Lark", "Larry", "Lewis", "Lorenzo", "Louie", "Maynard", "Mister Misty", 
+                                             "Mr. Nat", "Neil", "Noah", "Norman", "Oliver", "Oscar", "Ozzy", "Pauley"} },
+                { "Female", new List<string> { "Aja", "Ala", "Angelica", "Aubrey", "Ava", "Bella", "Birdie", "Bonnie", "Brittany", "Cher", 
+                                               "Chloe", "Connie", "Cynthia", "Gabby", "Greta", "Holly", "Indira", "Isabella", "Jenny", 
+                                               "Kira", "Laila", "Lexey", "Mama", "Mia", "Miss Pretty", "Nancy", "Nicky", "Opal", "Paloma", 
+                                               "Penny", "Sherry", "Simone", "Susan", "Suzie", "Teal", "Tori", "Valentina", "Yara"} }
             }},
             { "Horse", new Dictionary<string, List<string>> {
-                { "Male", new List<string> { "Spirit", "Shadow", "Thunder", "Blaze" } },
-                { "Female", new List<string> { "Bella", "Luna", "Daisy", "Sophie" } } 
+                { "Male", new List<string> { "Al", "Albert", "Angus", "Barbaro", "Bart", "Bert", "Benjamin", "Benny", "Blaze", "Bucephalus", 
+                                             "Buddy", "Carl", "Cash", "Chuck", "Chucky", "Dart", "Dennis", "Denny", "Doggy", "Donnie", "Ed", 
+                                             "Edison", "Edward", "Elmer", "Frankel", "Freckles", "Godolphin", "Jameson", "Jim", "Joe", 
+                                             "Manny", "Marengo", "Marvin", "Max", "Ned", "Ollie", "Opus", "Pal", "Percy", "President", 
+                                             "Sergeant Reckless", "Sheldon", "Sheriff", "Stewart", "Stewie", "Tank", "Ted", "Timmy", 
+                                             "Traveller", "Trigger"} },
+                { "Female", new List<string> { "Abby", "Annabelle", "Annie", "Autumn", "Bella", "Berta", "Betsy", "Bossy", "Carly", "Caroline", 
+                                               "Chloe", "Cookie", "Daisy", "Dolly", "Eleanor", "Ellie", "Fancy", "Flo", "Ginny", "Hailey", 
+                                               "Holly", "Jade", "Jasmine", "Jenny", "Juliet", "Lady", "Ladybird", "Luna", "Marigold", "Martha", 
+                                               "Mary", "Meadow", "Nancy", "Nel", "Nelly", "Pearl", "Penny", "Piper", "Princess", "Queen", "Queenie", 
+                                               "Roseanne", "Rosebud", "Rosie", "Sadie", "Sally", "Sassy", "Shania", "Shelby", "Shirley", "Valerie", 
+                                               "Venus", "Wanda", "Wendy", "Willow"} } 
             }},
             { "Turtle", new Dictionary<string, List<string>> {
-                { "Male", new List<string> { "Shelly", "Speedy", "Franklin", "Turtly" } }, 
-                { "Female", new List<string> { "Shelly", "Tina", "Tilly", "Luna" } } 
+                { "Male", new List<string> { "Achilles", "Apollo", "Atlas", "Balboa", "Baldwin", "Bowser", "Bruno", "Bubbles", "Charles", "Duke", "Emmet", 
+                                             "Frank", "Fergus", "Harley", "Hercules", "Hermes", "Hunter", "Kai", "Lemmy", "Leo", "Malcolm", "Melvin", 
+                                             "Mikey", "Mustafa", "Oogway", "Oscar", "Ozzy", "Popeye", "Paulie", "Pickle", "Poke", "Popeye", "Ramone", 
+                                             "Romeo", "Rufus", "Taco", "Waddles", "Donatello", "Leonardo", "Michelangelo", "Raphael"} }, 
+                { "Female", new List<string> { "Shelly", "Tina", "Tilly", "April", "Arcadia", "Ariel", "Aspen", "August", "Bertie", "Beryl", "Chartreuse", 
+                                               "Cherry", "Dolores", "Donna", "Elphaba", "Emma", "Fran", "Francesca", "Francine", "Giada", "Ginger", 
+                                               "Goldie", "Holly", "Ivy", "Jade", "Kelly", "Kenya", "Kiwi", "Lady Boxworthy", "Lana", "Lily", "Michelle", 
+                                               "Myrtle", "Molasses", "Olive", "Opal", "Penny", "Raffaella", "Ramona", "Ruby", "Sabrina", "Sienna", "Tammy"} } 
             }}
         };
 
@@ -155,7 +184,7 @@ namespace PetApiProgram.Services
                 }
                 catch (InvalidOperationException ex)
                 {
-                    Console.WriteLine("No more available images found for an animal type.");
+                    Console.WriteLine("No more unique available images found for an animal type.");
                 }
             }
 
