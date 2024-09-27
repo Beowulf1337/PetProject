@@ -19,7 +19,9 @@ namespace PetApiProgram.Controllers
         [HttpGet("generate/{number}")]
         public IActionResult GeneratePets(int number)
         {
-            var animalTypeCounts = new Dictionary<string, int>();
+
+            Dictionary<string, int> animalTypeCounts;
+
             var pets = _petService.GenerateRandomPets(number, out animalTypeCounts);
             var maleCount = pets.Count(pet => pet.Gender == "Male");
             var femaleCount = pets.Count(pet => pet.Gender == "Female");
