@@ -7,14 +7,15 @@ namespace PetApiProgram.Services
 {
     public class PetService
     {
-        private readonly List<string> animalTypes = new List<string> { "Cat", "Dog", "Bird", "Horse"};
+        private readonly List<string> animalTypes = new List<string> { "Cat", "Dog", "Bird", "Horse", "Turtle"};
 
         private readonly Dictionary<string, List<string>> petNames = new Dictionary<string, List<string>>
         {
             { "Cat", new List<string> { "Whiskers", "Fluffy", "Bella", "Luna" } },
             { "Dog", new List<string> { "Buddy", "Max", "Charlie", "Milo" } },
             { "Bird", new List<string> { "Tweety", "Sky", "Sunny", "Rio" } },
-            {"Horse", new List<string> {"Pegasus", "Bucephalus", "Seabiscuit", "Comanche" } }
+            {"Horse", new List<string> {"Pegasus", "Bucephalus", "Seabiscuit", "Comanche" } },
+            { "Turtle", new List<string> { "Leonardo", "Donatello", "Michelangelo", "Raphael" }}
         };
 
         private readonly Dictionary<string, List<string>> petImages = new Dictionary<string, List<string>>
@@ -22,7 +23,8 @@ namespace PetApiProgram.Services
             { "Cat", new List<string> { "https://localhost:7172/Images/orangeCat1.jpg", "https://localhost:7172/Images/orangeCat2.jpg", "https://localhost:7172/Images/beigeCat1.jpg" } },
             { "Dog", new List<string> { "https://localhost:7172/Images/smallDog1.jpg", "https://localhost:7172/Images/mediumDog1.jpeg" } },
             { "Bird", new List<string> { "https://localhost:7172/Images/birdParrot1.jpg", "https://localhost:7172/Images/birdParrot2.jpg" } },
-            { "Horse", new List<string> { "https://localhost:7172/Images/whiteHorse1.jpg", "https://localhost:7172/Images/brownHorse1.jpg" } }
+            { "Horse", new List<string> { "https://localhost:7172/Images/whiteHorse1.jpg", "https://localhost:7172/Images/brownHorse1.jpg" } },
+            { "Turtle", new List<string>{ "https://localhost:7172/Images/smallTurtle1.jpg", "https://localhost:7172/Images/seaTurtle1.jpg" } }
         };
 
         private readonly Dictionary<string, List<int>> petAgeRanges = new Dictionary<string, List<int>>
@@ -30,10 +32,11 @@ namespace PetApiProgram.Services
             { "Cat", new List<int> { 1, 20 } },
             { "Dog", new List<int> { 1, 15 } },
             { "Bird", new List<int> { 1, 10 } },
-            { "Horse", new List<int> { 1, 25 } }
+            { "Horse", new List<int> { 1, 25 } },
+            { "Turtle", new List<int> {1, 150} }
         };
 
-        private readonly List<string> owners = new List<string> { "Alice", "Bob", "Charlie", "Dave", "Eva", "Jhonny", "Peter", "Evelyn" };
+        private readonly List<string> owners = new List<string> { "Alice", "Bob", "Charlie", "Dave", "Eva", "Jhonny", "Peter", "Evelyn", "Steve", "Charles", "Victoria" };
         private readonly List<string> genders = new List<string> { "Male", "Female" };
 
         private readonly Random random = new Random();
