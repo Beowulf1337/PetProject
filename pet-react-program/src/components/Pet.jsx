@@ -1,20 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function Pet() {
-    const [pets, setPets] = useState([]);
-    const [stats, setStats] = useState({ male: 0, female: 0, total: 0, animalTypeCounts: {} });
-
-    const generatePets = async (number) => {
-        try {
-            const response = await fetch(`https://localhost:7172/api/pets/generate/${number}`);
-            const data = await response.json();
-            setPets(data.pets);
-            setStats(data.stats);
-        } catch (error) {
-            console.error("Error fetching pets:", error);
-        }
-    };
-
+export default function Pet({ pets, stats, generatePets }) {  
     return (
         <div className="pet-container">
             <button onClick={() => generatePets(21)}>Generate 21 Pets</button>

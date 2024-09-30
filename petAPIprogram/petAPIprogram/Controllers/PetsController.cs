@@ -36,5 +36,10 @@ namespace PetApiProgram.Controllers
 
             return Ok(new { Pets = pets, Stats = stats });
         }
+        [HttpPost]
+        public Pet AddPet(Pet newPet)
+        {
+                return newPet;
+        }
     }
 }

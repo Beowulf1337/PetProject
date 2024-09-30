@@ -190,5 +190,18 @@ namespace PetApiProgram.Services
 
             return pets;
         }
+        private readonly List<Pet> _pets = new List<Pet>();
+
+        public Pet AddPet(Pet newPet)
+        {
+            newPet.Id = Guid.NewGuid().ToString(); // Assign a unique ID
+            _pets.Add(newPet);
+            return newPet;
+        }
+
+        public Pet GetPetById(string id)
+        {
+            return _pets.FirstOrDefault(p => p.Id == id);
+        }
     }
 }
