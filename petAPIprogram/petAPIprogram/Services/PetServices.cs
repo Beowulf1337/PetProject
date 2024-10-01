@@ -153,6 +153,7 @@ namespace PetApiProgram.Services
                 ImageUrl = imageUrl,
                 Age = age,
                 Gender = gender,
+                AnimalType = animalType,
                 Owner = owners[random.Next(owners.Count)]
             };
         }

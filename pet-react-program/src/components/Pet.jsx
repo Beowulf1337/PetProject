@@ -13,6 +13,7 @@ export default function Pet({ pets, stats, generatePets }) {
                             <img src={pet.imageUrl} alt={pet.name} style={{ width: "150px", height: "150px", objectFit: "cover" }} />
                             <p>Age: {pet.age}</p>
                             <p>Gender: {pet.gender}</p>
+                            <p>Animal Type: {pet.animalType}</p>
                             <p>Owner: {pet.owner}</p>
                         </div>
                     ))}

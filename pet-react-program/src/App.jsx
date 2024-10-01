@@ -46,9 +46,12 @@ function App() {
     return (
         <>
             <div>
-                <h1>Random Pet Generator</h1>
-                <Pet pets={pets} stats={stats} generatePets={generatePets} /> {/* Pass pets, stats, and generatePets as props */}
-                <AddPetForm onAddPet={handleAddPet} /> {/* Pass the handler */}
+                <div className="topText">
+                <h1>P.E.T</h1>
+                <h4>Pets Extra Times</h4>
+                </div>
+                <Pet pets={pets} stats={stats} generatePets={generatePets} /> 
+                <AddPetForm onAddPet={handleAddPet} />
             </div>
         </>
     );
