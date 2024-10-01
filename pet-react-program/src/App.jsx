@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import Pet from './components/Pet.jsx'; 
+import Pet from './components/Pet.jsx';
 import AddPetForm from './components/AddPetForm.jsx';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
     const handleAddPet = (newPet) => {
         setPets((prevPets) => [...prevPets, newPet]);
-        updateStats(newPet); 
+        updateStats(newPet);
     };
 
     const updateStats = (newPet) => {
@@ -44,16 +44,12 @@ function App() {
     };
 
     return (
-        <>
-            <div>
-                <div className="topText">
+        <div className="full-page-content">
                 <h1>P.E.T</h1>
                 <h4>Pets Extra Times</h4>
-                </div>
-                <AddPetForm onAddPet={handleAddPet} />
-                <Pet pets={pets} stats={stats} generatePets={generatePets} /> 
-            </div>
-        </>
+            <AddPetForm onAddPet={handleAddPet} />
+            <Pet pets={pets} stats={stats} generatePets={generatePets} />
+        </div>
     );
 }
 

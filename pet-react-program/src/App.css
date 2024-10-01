@@ -1,3 +1,24 @@
+html, body {
+  margin: 0; 
+  display: flex;
+  justify-content: center; 
+  margin: 0; 
+  overflow-y: auto;
+}
+
+.full-page-content {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
+  padding: 20px; 
+  box-sizing: border-box; 
+  text-align: center;
+  overflow: visible;
+  min-height: 100vh; 
+}
+
+
 .pet-container {
   text-align: center;
 }
@@ -8,8 +29,9 @@
   border-radius: 5px;
   text-align: left;
   position:absolute; 
-  top: 160px;          
+  top: 160px;
   left: 50px; 
+  overflow:visible;
 }
 
 .animal-type-stats ul {
@@ -40,6 +62,9 @@
   margin-top: 20px;
   width: "150px"; 
   height: "150px";
+  overflow: visible;
+  position: relative;
+
 }
 
 .pet-details {
@@ -49,6 +74,7 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   text-align: center;
+  overflow: visible;
 }
 
 .pet-details img {
@@ -56,6 +82,9 @@
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
+  overflow: hidden; 
+  position: relative;
+
 }
 
 .add-pet-form {
@@ -65,6 +94,9 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  overflow: auto; 
+  position: relative;
+
 }
 
 .form-row {
