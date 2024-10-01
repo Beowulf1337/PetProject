@@ -50,8 +50,8 @@ function App() {
                 <h1>P.E.T</h1>
                 <h4>Pets Extra Times</h4>
                 </div>
-                <Pet pets={pets} stats={stats} generatePets={generatePets} /> 
                 <AddPetForm onAddPet={handleAddPet} />
+                <Pet pets={pets} stats={stats} generatePets={generatePets} /> 
             </div>
         </>
     );

@@ -46,25 +46,36 @@ const AddPetForm = ({ onAddPet }) => {
         }
     };
 
+    
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Owner" value={owner} onChange={(e) => setOwner(e.target.value)} required /> 
-            <input type="text" placeholder="Pet name" value={name} onChange={(e) => setName(e.target.value)} required />
-            <select value={gender} onChange={(e) => setGender(e.target.value)}>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
-            <select value={animalType} onChange={(e) => setAnimalType(e.target.value)}>
-                <option value="Cat">Cat</option>
-                <option value="Dog">Dog</option>
-                <option value="Bird">Bird</option>
-                <option value="Horse">Horse</option>
-                <option value="Turtle">Turtle</option>
-            </select>
-            <input type="text" placeholder="Image URL" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} required />
-            <input type="number" placeholder="Animals age" value={age} onChange={(e) => setAge(Number(e.target.value))} required />
-
-            <button type="submit">Add Pet</button>
+        <form className="add-pet-form" onSubmit={handleSubmit}>
+            <div className="form-row">
+                <input type="text" placeholder="Owner" value={owner} onChange={(e) => setOwner(e.target.value)} required />
+                <input type="text" placeholder="Pet Name" value={name} onChange={(e) => setName(e.target.value)} required />
+            </div>
+            <div className="form-row-selectors">
+                <select value={gender} onChange={(e) => setGender(e.target.value)} required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <button className="submit-button"type="submit">
+                    <div className="image-button-container">
+                        <img src="src\components\Images\transparentPawSubmitButtonCropped.png" alt="Add Pet"/>
+                        <span className="add-pet-text">Add Pet</span>
+                    </div>
+                </button>
+                <select value={animalType} onChange={(e) => setAnimalType(e.target.value)} required>
+                    <option value="Cat">Cat</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Bird">Bird</option>
+                    <option value="Horse">Horse</option>
+                    <option value="Turtle">Turtle</option>
+                </select>
+            </div>
+            <div className="form-row">
+                <input type="number" placeholder="Animal Age" value={age} onChange={(e) => setAge(Number(e.target.value))} required />
+                <input type="text" placeholder="Image URL" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} required />
+            </div>
         </form>
     );
 };
