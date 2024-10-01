@@ -42,7 +42,6 @@ function App() {
             console.error("Error fetching pets:", error);
         }
     };
-
     return (
         <div className="full-page-content">
                 <h1>P.E.T</h1>
