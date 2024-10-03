@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View, Pressable, Picker } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Pressable } from 'react-native';
+import {Picker} from '@react-native-picker/picker';
+
 
 export default function AddPetForm({ onAddPet }) {
     const [name, setName] = useState('');
