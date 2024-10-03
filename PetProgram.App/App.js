@@ -83,7 +83,7 @@ export default function App() {
 
       <Pet pets={pets} stats={stats} generatePets={generatePets} />
     </ScrollView>
-);
+  );
 }
 const styles = StyleSheet.create({
   fullPageContent: {
@@ -132,12 +132,12 @@ const styles = StyleSheet.create({
   headerContainer: {
     width: '100%',
     alignItems: 'center',
-    marginBottom: 20, 
+    marginBottom: 20,
   },
   header: {
     fontSize: 20,
     marginBottom: 5,
-    textAlign: 'center', 
+    textAlign: 'center',
   },
   subHeader: {
     fontSize: 18,

@@ -77,7 +77,7 @@ export default function AddPetForm({ onAddPet }) {
                     onChangeText={setImageUrl}
                 />
             </View>
-            <Pressable onPress={handleSubmit}>
+            <Pressable onPress={handleSubmit} style={styles.addPetSubmit}>
                 <Text>Add pet</Text>
             </Pressable>
         </View>
@@ -108,4 +108,11 @@ const styles = StyleSheet.create({
         borderColor: '#ccc',
         borderRadius: 5,
     },
+    addPetSubmit: {
+        borderWidth: 1,
+        borderColor: '#ccc',
+        width: '100%',
+        maxWidth: 55,
+        borderRadius: 5,
+    }
 });
