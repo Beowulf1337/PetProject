@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './index.css';
 import Pet from './components/Pet.jsx';
 import AddPetForm from './components/AddPetForm.jsx';
 
