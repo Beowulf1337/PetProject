@@ -195,7 +195,7 @@ namespace PetApiProgram.Services
 
         public Pet AddPet(Pet newPet)
         {
-            newPet.Id = Guid.NewGuid().ToString(); // Assign a unique ID
+            newPet.Id = Guid.NewGuid().ToString(); 
             _pets.Add(newPet);
             return newPet;
         }
