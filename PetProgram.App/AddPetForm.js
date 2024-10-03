@@ -39,6 +39,12 @@ export default function AddPetForm({ onAddPet }) {
 
         // call the onAddPet function passed as a prop passing the new pet data
         onAddPet(newPet);
+        setName('');
+        setGender('Male');
+        setAnimalType('Cat');
+        setImageUrl('');
+        setAge('Animals age');
+        setOwner('')
     };
 
     return (
@@ -62,7 +68,7 @@ export default function AddPetForm({ onAddPet }) {
             <View style={styles.formRow}>
                 <TextInput
                     style={styles.input}
-                    placeholder="Age"
+                    placeholder="Animals age"
                     value={age}
 
                     // ensure age is a number
