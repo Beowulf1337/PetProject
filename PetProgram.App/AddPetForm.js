@@ -79,8 +79,12 @@ export default function AddPetForm({ onAddPet }) {
             {/* picker dropdown for selecting pet's gender */}  
             <View style={styles.formRow}>
                 <Picker
+
+                    // current selected value for gender
                     selectedValue={gender}
 
+                    style={styles.picker}
+                    
                     // update gender on selection
                     onValueChange={(itemValue) => setGender(itemValue)}
                 >
@@ -94,8 +98,13 @@ export default function AddPetForm({ onAddPet }) {
 
             {/* picker dropdown for selecting animal type */}
             <View style={styles.formRow}>
+                <View style={styles.pickerWrapper}>
                 <Picker
+
+                    // current selected value for animal type
                     selectedValue={animalType}
+
+                    style={styles.picker}
 
                     // update animal type on selection
                     onValueChange={(itemValue) => setAnimalType(itemValue)}
@@ -108,7 +117,7 @@ export default function AddPetForm({ onAddPet }) {
                     <Picker.Item label="Turtle" value="Turtle" />
                 </Picker>
             </View>
-
+            </View>
             {/* input field for owner's name */}
             <View style={styles.formRow}>
                 <TextInput
@@ -141,74 +150,98 @@ export default function AddPetForm({ onAddPet }) {
     );
 }
 
-// styles for the form and its elements
 const styles = StyleSheet.create({
     formContainer: {
 
-        // arrange items in a column
+        // arrange child components in a vertical column
         flexDirection: 'column',
 
         // add padding inside the container
         padding: 20,
+
+        // set the width to 100% of the parent container
         width: '100%',
 
-        // limit max width
-        maxWidth: 600,
+        // limit the maximum width to 400 pixels
+        maxWidth: 400,
 
-        // center the form
+        // center the container horizontally
         margin: 'auto',
-    },
-    heading: {
-
-        // font size for heading
-        fontSize: 20,
-
-        // margin below the heading
-        marginBottom: 20,
-
-        // center the heading text
-        textAlign: 'center',
     },
     formRow: {
 
-        // space between form fields
+        // add space below each form row to separate fields
         marginBottom: 15,
     },
     input: {
 
-        // full width input fields
+        // make the input field take the full width of its container
         width: '100%',
 
-        // padding inside input fields
+        // add padding inside the input field
         padding: 10,
 
-        // font size for input text
+        // set the font size for the input text
         fontSize: 16,
 
-        // border width for input fields
+        // define the border width for the input field
         borderWidth: 1,
 
-        // light gray border color
+        // set the border color to light gray
         borderColor: '#ccc',
 
-        // rounded corners
+        // round the corners of the input field
         borderRadius: 5,
+    },
+    pickerWrapper: {
+
+        // make the picker wrapper take the full width of its container
+        width: '100%',
+
+        // no padding inside the picker wrapper
+        padding: 0,
+
+        // define the border width for the picker wrapper
+        borderWidth: 1,
+
+        // set the border color to light gray
+        borderColor: '#ccc',
+
+        // round the corners of the picker wrapper
+        borderRadius: 5,
+    },
+    picker: {
+
+        // set the height of the Picker component
+        height: 45,  
+
+        // set the font size for the Picker text
+        fontSize: 16,
     },
     addPetSubmit: {
 
-        // border width for the submit button
+        // define the border width for the submit button
         borderWidth: 1,
 
-        // border color
+        // set the border color to light gray
         borderColor: '#ccc',
 
-        // full width submit button
-        width: '100%',
+        // set the width of the button to 50% of its container
+        width: '50%',  
 
-        // limit width for submit button
-        maxWidth: 55,
-
-        // rounded corners for button
+        // round the corners of the button
         borderRadius: 5,
-    }
+
+        // center the button horizontally within its parent
+        alignSelf: 'center',  
+
+        // add padding inside the button
+        padding: 10,
+
+        // center the text vertically within the button
+        justifyContent: 'center', 
+        
+        // center the text horizontally within the button
+        alignItems: 'center',  
+    },
 });
