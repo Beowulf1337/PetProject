@@ -6,10 +6,10 @@ import './index.css'
 // create the root of the app and render the App component within StrictMode
 createRoot(document.getElementById('root')).render(
 
-   /* Wrap the app in StrictMode for highlighting issues */
+   /* wrap the app in StrictMode for highlighting issues */
   <StrictMode>
 
-    {/* Render the main App component */}
+    {/* render the main App component */}
     <App />
   </StrictMode>,
 )
