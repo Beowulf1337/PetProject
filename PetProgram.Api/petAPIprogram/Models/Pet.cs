@@ -6,24 +6,24 @@
     {
 
         // unique identifier for the pet
-        public string Id { get; set; }
+        public string Id { get; set; } = string.Empty;
 
         // the name of the pet
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         // url of the pets image
-        public string ImageUrl { get; set; }
+        public string ImageUrl { get; set; } = string.Empty;
 
         // the pets age
         public int Age { get; set; }
 
         // the pets gender
-        public string Gender { get; set; }
+        public string Gender { get; set; } = string.Empty;
 
         // the pets owner
-        public string Owner { get; set; }
+        public string Owner { get; set; } = string.Empty;
 
         // the type of pet
-        public string AnimalType { get; set; }
+        public string AnimalType { get; set; } = string.Empty;
     }
 }
