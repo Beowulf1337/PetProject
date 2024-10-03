@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Node.js / React specific
 node_modules/
 build/
@@ -16,3 +17,23 @@ obj/
 # Other
 .DS_Store            # macOS specific
 Thumbs.db           # Windows specific
+=======
+# Node.js / React specific
+node_modules/
+build/
+
+# ASP.NET specific
+bin/
+obj/
+.vs/
+
+# Visual Studio specific files
+*.user
+
+# Log files
+*.log
+
+# Other
+.DS_Store            # macOS specific
+Thumbs.db           # Windows specific
+>>>>>>> test

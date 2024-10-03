@@ -1,0 +1,448 @@
+:root {
+
+  /* set the global font family and improve text rendering */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* default line height for better readability */
+  line-height: 1.5; 
+
+  /* regular font weight */
+  font-weight: 400; 
+
+  /* define color scheme for dark and light modes */
+  color-scheme: light dark; 
+
+   /* default text color for dark mode */
+  color: rgba(255, 255, 255, 0.87); 
+
+  /* dark background for dark mode */
+  background-color: #242424; 
+
+  /* disable synthetic bold and italics */
+  font-synthesis: none; 
+
+  /* optimize text rendering */
+  text-rendering: optimizeLegibility; 
+
+  /* improve font rendering for WebKit browsers */
+  -webkit-font-smoothing: antialiased; 
+
+   /* improve font rendering for MacOS */
+  -moz-osx-font-smoothing: grayscale; 
+}
+
+html, body {
+
+  /* set margin to 0 for full page content */
+  margin: 0; 
+  display: flex;
+
+  /* center content horizontally */
+  justify-content: center;
+
+  /* allow vertical scrolling */
+  overflow-y: auto;
+
+  /* ensure a minimum page width */
+  min-width: 320px; 
+
+  /* ensure full height for the page */
+  min-height: 100vh; 
+}
+
+h1 {
+
+  /* style for main header (h1) */
+
+   /* large font size */
+  font-size: 3.2em; 
+
+  /* reduce space between lines */
+  line-height: 1.1; 
+
+  /* add space below the heading */
+  margin-bottom: 0.5em; 
+}
+
+h4 {
+
+  /* style for subheader (h4) */
+
+  /* medium font size */
+  font-size: 1.5em; 
+
+  /* remove top margin */
+  margin-top: 0; 
+}
+
+a {
+
+  /* style for links */
+
+  /* medium font weight */
+  font-weight: 500;
+
+  /* default link color */
+  color: #646cff;
+
+  /* keep inherited text decoration */
+  text-decoration: inherit; 
+}
+a:hover {
+
+  /* hover state for links */
+
+  /* darker blue color on hover */
+  color: #535bf2;
+}
+
+button {
+
+  /* button styling */
+
+  /* rounded corners */
+  border-radius: 8px; 
+
+   /* transparent border */
+  border: 1px solid transparent; 
+
+  /* padding for clickable area */
+  padding: 0.6em 1.2em;
+
+  /* regular font size */
+  font-size: 1em; 
+
+  /* medium font weight */
+  font-weight: 500; 
+
+  /* inherit font from root */
+  font-family: inherit;
+
+  /* dark background */
+  background-color: #1a1a1a; 
+
+  /* pointer cursor on hover */
+  cursor: pointer;
+
+  /* smooth border color transition */
+  transition: border-color 0.25s; 
+}
+button:hover {
+
+  /* hover state for button */
+
+  /* change border color on hover */
+  border-color: #646cff; 
+}
+button:focus,
+button:focus-visible {
+
+  /* focus state for buttons */
+
+  /* standard focus outline */
+  outline: 4px auto -webkit-focus-ring-color; 
+}
+
+.full-page-content {
+
+  /* main container styling */
+  display: flex;
+
+  /* arrange content vertically */
+  flex-direction: column;
+
+  /* center content vertically */
+  justify-content: center;
+  
+  /* center content horizontally */
+  align-items: center; 
+
+  /* padding around the content */
+  padding: 1.25rem; 
+
+  /* include padding in element width/height */
+  box-sizing: border-box; 
+
+  /* center text */
+  text-align: center; 
+
+  /* allow content to overflow */
+  overflow: visible; 
+
+  /* full viewport height */
+  min-height: 100vh; 
+}
+
+.pet-container {
+
+  /* container for the pet-related content */
+
+  /* center-align the text */
+  text-align: center;
+}
+
+.animal-type-stats {
+
+  /* styling for animal type statistics section */
+
+  /* margin below the element */
+  margin-bottom: 1.25rem; 
+
+  /* padding inside the element */
+  padding: 0.625rem; 
+
+  /* rounded corners */
+  border-radius: 0.3125rem; 
+
+  /* right-align text */
+  text-align: right; 
+
+  /* positioned absolutely */
+  position: absolute;
+
+  /* positioned at the top of the container */
+  top: 0rem; 
+
+  /* positioned to the right */
+  right: 3.125rem; 
+  
+  /* allow overflow */
+  overflow: visible; 
+}
+
+.animal-type-stats ul {
+
+  /* styling for the list of animal types */
+
+  /* remove bullet points */
+  list-style-type: none; 
+
+  /* remove padding */
+  padding: 0; 
+
+  /* remove margin */
+  margin: 0; 
+}
+
+.animal-type-stats li {
+
+  /* list item styling */
+
+  /* space between list items */
+  margin-bottom: 0.3125rem; 
+}
+
+.general-animal-stats {
+
+  /* general animal statistics section */
+
+  margin-bottom: 1.25rem;
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+  text-align: left;
+  position: absolute;
+  top: 0;
+
+  /* positioned to the left */
+  left: 3.125rem; 
+
+  /* no bullet points */
+  list-style-type: none; 
+}
+
+.pet-list {
+
+  /* list of pets */
+
+  /* flexbox layout */
+  display: flex; 
+
+  /* wrap items to new line if needed */
+  flex-wrap: wrap; 
+
+  /* center items */
+  justify-content: center; 
+  overflow: visible;
+
+  /* positioned relative to the container */
+  position: relative; 
+}
+
+.pet-details {
+
+  /* individual pet details card */
+
+  display: inline-block;
+  margin: 0.625rem;
+  padding: 0.625rem;
+
+  /* light border */
+  border: 1px solid #ccc; 
+
+  /* rounded corners */
+  border-radius: 0.5rem; 
+  text-align: center;
+  overflow: visible;
+}
+
+.pet-details img {
+
+  /* styling for pet image */
+
+  /* fixed width */
+  width: 9.375rem; 
+
+  /* fixed height */
+  height: 9.375rem;
+
+  /* cover the container without distortion */
+  object-fit: cover; 
+
+  /* rounded corners */
+  border-radius: 0.5rem; 
+  overflow: hidden;
+  position: relative;
+}
+
+.add-pet-form {
+
+  /* form container */
+
+  display: flex;
+
+  /* vertical layout */
+  flex-direction: column;
+
+  /* space between form elements */
+  gap: 0.9375rem; 
+  width: 100%;
+
+  /* maximum width for responsiveness */
+  max-width: 37.5rem; 
+
+  /* center the form */
+  margin: 0 auto; 
+  overflow: auto;
+}
+
+.form-row {
+
+  /* styling for a row in the form */
+
+  display: flex;
+  justify-content: center;
+  gap: 0.9375rem;
+}
+
+.form-row-selectors {
+
+  /* container for form selectors like gender, animal type */
+
+  display: flex;
+  justify-content: center;
+  padding: 0.625rem;
+  gap: 0.9375rem;
+  height: 2.5625rem;
+}
+
+.input-row {
+
+  /* styling for rows containing input elements */
+  
+  display: flex;
+  align-items: center;
+  gap: 0.9375rem;
+}
+
+input, select {
+
+  /* general input and select element styling */
+  
+  /* fixed width */
+  width: 12.5rem; 
+  padding: 0.625rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+
+  /* slightly rounded corners */
+  border-radius: 0.25rem; 
+}
+
+.submit-button {
+
+  /* styling for submit button */
+
+  /* remove border */
+  border: none; 
+
+  /* transparent background */
+  background: none;
+  padding: 0;
+}
+
+.image-button-container {
+
+  /* container for the image-based button */
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: -1.0625rem;
+}
+
+.image-button-container img {
+
+  /* image for the submit button */
+
+  width: 5.3125rem;
+  height: 4.6875rem;
+}
+
+.add-pet-text {
+
+  /* styling for the text over the submit button */
+
+  position: absolute;
+
+  /* positioned at the bottom of the image */
+  top: 78%; 
+
+  /* center horizontally */
+  left: 50%; 
+
+  /* center the text */
+  transform: translate(-50%, -50%); 
+  
+  /* text color */
+  color: #2e221c; 
+
+  /* small font size */
+  font-size: 0.6875rem; 
+
+  /* bold text */
+  font-weight: bold; 
+  text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+
+  /* light mode styles */
+  :root {
+
+    /* dark text for light mode */
+    color: #213547;
+
+     /* white background */
+    background-color: #ffffff; 
+  }
+  a:hover {
+
+    /* light mode hover state for links */
+    color: #747bff;
+  }
+  button {
+
+    /* light background for buttons */
+    background-color: #f9f9f9; 
+  }
+}
