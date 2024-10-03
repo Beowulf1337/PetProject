@@ -9,26 +9,6 @@ export default function Pet({ pets, stats, generatePets }) {
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            <View style={styles.generalAnimalStats}>
-                <Text style={styles.header}>Page statistics</Text>
-                <View style={styles.generalAnimalStatsActual}>
-                    <Text>Total Pets: {stats.total}</Text>
-                    <Text>Males: {stats.male}</Text>
-                    <Text>Females: {stats.female}</Text>
-                </View>
-            </View>
-
-            <View style={styles.animalTypeStats}>
-                <Text style={styles.subHeader}>Pet type distribution</Text>
-                <View>
-                    {Object.keys(stats.animalTypeCounts).map((type) => (
-                        <Text key={type}>
-                            {type}: {stats.animalTypeCounts[type]}
-                        </Text>
-                    ))}
-                </View>
-            </View>
-
             {pets.length > 0 && (
                 <View style={styles.petList}>
                     {pets.map((pet) => (
@@ -51,26 +31,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-    },
-    generalAnimalStats: {
-        marginBottom: 10,
-        padding: 10,
-        borderRadius: 5,
-        backgroundColor: '#f0f0f0',
-        maxWidth: 300,
-        alignSelf: 'flex-start',
-    },
-    generalAnimalStatsActual: {
-        padding: 5,
-        borderRadius: 5,
-    },
-    animalTypeStats: {
-        marginBottom: 10,
-        padding: 10,
-        borderRadius: 5,
-        backgroundColor: '#f0f0f0',
-        maxWidth: 300,
-        alignSelf: 'flex-start',
     },
     petList: {
         flexDirection: 'row',

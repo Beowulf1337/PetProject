@@ -48,29 +48,100 @@ export default function App() {
 
   return (
     <ScrollView contentContainerStyle={styles.fullPageContent}>
-      <Text style={styles.header}>P.E.T</Text>
-      <Text style={styles.subHeader}>Pets Extra Times</Text>
-      <AddPetForm onAddPet={handleAddPet} />
+      <View style={styles.headerContainer}>
+        <Text style={styles.header}>P.E.T</Text>
+        <Text style={styles.subHeader}>Pets Extra Times</Text>
+      </View>
+
+      <View style={styles.mainContainer}>
+        <View style={styles.statsContainer}>
+          <View style={styles.generalAnimalStats}>
+            <Text style={styles.header}>Page statistics</Text>
+            <View style={styles.generalAnimalStatsActual}>
+              <Text>Total Pets: {stats.total}</Text>
+              <Text>Males: {stats.male}</Text>
+              <Text>Females: {stats.female}</Text>
+            </View>
+          </View>
+
+          <View style={styles.animalTypeStats}>
+            <Text style={styles.subHeader}>Pet type distribution</Text>
+            <View>
+              {Object.keys(stats.animalTypeCounts).map((type) => (
+                <Text key={type}>
+                  {type}: {stats.animalTypeCounts[type]}
+                </Text>
+              ))}
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.centeredForm}>
+          <AddPetForm onAddPet={handleAddPet} />
+        </View>
+      </View>
+
       <Pet pets={pets} stats={stats} generatePets={generatePets} />
     </ScrollView>
-  );
+);
 }
-
 const styles = StyleSheet.create({
   fullPageContent: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
     padding: 20,
-    textAlign: 'center',
-    minHeight: '100%',
+    alignItems: 'flex-start',
+  },
+  mainContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    width: '100%',
+    maxWidth: 1200,
+    paddingHorizontal: 10,
+  },
+  statsContainer: {
+    flex: 1,
+    maxWidth: '35%',
+    alignItems: 'flex-start',
+    paddingRight: 10,
+  },
+  centeredForm: {
+    flex: 1,
+    maxWidth: '50%',
+    alignItems: 'center',
+    marginLeft: 10,
+  },
+  generalAnimalStats: {
+    marginBottom: 10,
+    padding: 10,
+    borderRadius: 5,
+    backgroundColor: '#f0f0f0',
+    maxWidth: 300,
+  },
+  generalAnimalStatsActual: {
+    padding: 5,
+    borderRadius: 5,
+  },
+  animalTypeStats: {
+    marginBottom: 10,
+    padding: 10,
+    borderRadius: 5,
+    backgroundColor: '#f0f0f0',
+    maxWidth: 300,
+  },
+
+  headerContainer: {
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: 20, 
   },
   header: {
-    fontSize: 40,
-    marginBottom: 10,
+    fontSize: 20,
+    marginBottom: 5,
+    textAlign: 'center', 
   },
   subHeader: {
-    fontSize: 24,
-    marginBottom: 20,
+    fontSize: 18,
+    marginBottom: 5,
+    textAlign: 'center',
   },
 });
