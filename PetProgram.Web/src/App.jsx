@@ -35,17 +35,36 @@ function App() {
     const generatePets = async (number) => {
         try {
             const response = await fetch(`https://localhost:7172/api/pets/generate/${number}`);
-            const data = await response.json();
-            setPets(data.pets);
-            setStats(data.stats);
+            const fetchedPets = await response.json();
+            setPets(fetchedPets);
+
+            const updatedStats = calculateStats(fetchedPets);
+            setStats(updatedStats);
         } catch (error) {
             console.error("Error fetching pets:", error);
         }
     };
+    const calculateStats = (pets) => {
+        const maleCount = pets.filter(pet => pet.gender === 'Male').length;
+        const femaleCount = pets.filter(pet => pet.gender === 'Female').length;
+
+        const animalTypeCounts = pets.reduce((acc, pet) => {
+            acc[pet.animalType] = (acc[pet.animalType] || 0) + 1;
+            return acc;
+        }, {});
+
+        return {
+            total: pets.length,
+            male: maleCount,
+            female: femaleCount,
+            animalTypeCounts,
+        };
+    };
+
     return (
         <div className="full-page-content">
-                <h1>P.E.T</h1>
-                <h4>Pets Extra Times</h4>
+            <h1>P.E.T</h1>
+            <h4>Pets Extra Times</h4>
             <AddPetForm onAddPet={handleAddPet} />
             <Pet pets={pets} stats={stats} generatePets={generatePets} />
         </div>
